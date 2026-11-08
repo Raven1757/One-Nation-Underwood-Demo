@@ -679,13 +679,10 @@ function setupMusicPlayer() {
   if (document.getElementById("player")) return;
 
   const defaultSongs = [
-    ["Counting Bodies Like Sheep", "A Perfect Circle", "https://i.ytimg.com/vi/93ByMEx50Zc/hqdefault.jpg?sqp=-oaymwFBCOADEI4CSFryq4qpAzMIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB8AEB-AH-BIAC4AOKAgwIABABGH8gNigZMA8=&rs=AOn4CLAdeG6Ms0PdedFUT4hDyOP0sdAbig", "https://audio.jukehost.co.uk/01a05a69-1988-7014-8a8c-609c79f57176"],
-    ["Lights and Sounds", "Yellowcard", "https://i.discogs.com/ufiibW7nHyS4vtC1dKaAKHjYtRB0abTCma0uHQfRCtk/rs:fit/g:sm/q:90/h:588/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTIwMDE2/NTgtMTU5MTQzOTYx/MS03MDUyLmpwZWc.jpeg", "https://audio.jukehost.co.uk/01a05a69-42e9-73ac-857d-add2b4627c6e"],
-    ["Holiday / Blvd of Broken Dreams", "Green Day", "https://upload.wikimedia.org/wikipedia/en/e/ed/Green_Day_-_American_Idiot_album_cover.png", "https://audio.jukehost.co.uk/8CLWokDOaUI0nDFrFmDUMBYHCRHrnCDG"],
-    ["Rock You Like a Hurricane", "Scorpions", "https://imgs.search.brave.com/u63q7zZGr6Stt0HbdT8NklhjNfhKmtUdMRRse-6OGOI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vMi8yOS9S/b2NrX1lvdV9MaWtl/X2FfSHVycmljYW5l/X2J5X1Njb3JwaW9u/c19FdXJvcGVhbl9h/cnR3b3JrX0dlcm1h/bl9yZWxlYXNlLnBu/Zz91dG1fc291cmNl/PWVuLndpa2lwZWRp/YS5vcmcmYW1wO3V0/bV9jYW1wYWlnbj1p/bmRleCZhbXA7dXRt/X2NvbnRlbnQ9dGh1/bWJuYWlsX3Vuc2Nh/bGVk", "https://audio.jukehost.co.uk/01a0cbd8-78d3-71f2-97ad-92e2bea1eeef"],
-    ["What I've done", "Linkin Park", "https://imgs.search.brave.com/HoBshWuh1FPZVaKrqKHITh6Lt97jA3N2FLPPeqHSSqk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly91cGxv/YWQud2lraW1lZGlh/Lm9yZy93aWtpcGVk/aWEvZW4vOS85NC9X/aGF0SSUyN3ZlRG9u/ZUNvdmVyLmpwZz91/dG1fc291cmNlPWVu/Lndpa2lwZWRpYS5v/cmcmYW1wO3V0bV9j/YW1wYWlnbj1pbmRl/eCZhbXA7dXRtX2Nv/bnRlbnQ9dGh1bWJu/YWlsX3Vuc2NhbGVk", "https://audio.jukehost.co.uk/01a073a1-8893-734b-b28b-5d21dbff95ba"],
-    ["The Boy Who Blocked His Own Shot", "Brand New", "https://resources.tidal.com/images/1c1ba9d5/f47c/417d/86d3/48d46dac02db/320x320.jpg", "https://audio.jukehost.co.uk/5tx0d7xnGrJw3T2ue4r451SLrRUphlBd"],
-    ["War All The Time", "Thursday", "https://resources.tidal.com/images/2eb4dbc7/0f01/4d0c/ac73/c19691259eea/320x320.jpg", "https://audio.jukehost.co.uk/seThtysSBS6MsbfeUUNRuKlxAkR0GSlO"],
+    ["House of Cards", "Jeff Beal", "https://i.ytimg.com/vi/zMqTR6IT3CQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBVKvYy37-xUAiHqkjA33D3XfMQhQ", "https://audio.jukehost.co.uk/01a1b8d0-2b64-7092-bd2c-8d980f2f1ba1"],
+    ["Articles of Impeachment", "Jeff Beal", "https://i.ytimg.com/vi/zMqTR6IT3CQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBVKvYy37-xUAiHqkjA33D3XfMQhQ", "https://audio.jukehost.co.uk/01a1b8d6-9a53-7050-8c5c-00ff1fb24f56"],
+    ["I Know What I Have To Do", "Jeff Beal", "https://i.ytimg.com/vi/zMqTR6IT3CQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBVKvYy37-xUAiHqkjA33D3XfMQhQ", "https://audio.jukehost.co.uk/01a1b8d6-9a53-73ab-9fbe-120e3b323811"],
+    ["Underwood's New Deal", "Jeff Beal", "https://i.ytimg.com/vi/zMqTR6IT3CQ/hq720.jpg?sqp=-oaymwEnCNAFEJQDSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBVKvYy37-xUAiHqkjA33D3XfMQhQ", "https://audio.jukehost.co.uk/01a1b8d7-d400-70a3-af2a-986d81414032"],
   ];
 
   if (activePlaylist.songs.length === 0) {
